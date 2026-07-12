@@ -317,10 +317,7 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ── REPLACE THIS with your real Formspree endpoint ──
-  // 1. Go to https://formspree.io and create a free account
-  // 2. Create a new form, copy the endpoint it gives you (looks like https://formspree.io/f/xxxxabcd)
-  // 3. Paste it below in place of the placeholder URL
+  // Submissions are delivered to lisa@elsingbooks.com via Formspree.
   const FORM_ENDPOINT = "https://formspree.io/f/mzdnbpag";
 
   const form = document.getElementById('contactForm');
@@ -331,12 +328,6 @@
     e.preventDefault();
     msg.className = 'form-msg';
     msg.textContent = '';
-
-    if (FORM_ENDPOINT.includes('https://formspree.io/f/mzdnbpag')) {
-      msg.textContent = 'Form is not connected yet — add your Formspree endpoint in index.html.';
-      msg.className = 'form-msg error';
-      return;
-    }
 
     btn.disabled = true;
     btn.textContent = 'Sending…';
